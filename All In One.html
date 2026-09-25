@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>All In One Installer</title>
+        <link rel="stylesheet" href="https://cloudflare.com">
+        <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background: linear-gradient(135deg, #1e120c, #0f0a06);
+                color: #e6dfd9;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            /* Header */
+            .lab-header {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+            }
+
+            .logo i { color: #d09c6a; }
+
+            /* Dashboard Split Grid */
+            .lab-container {
+                display: flex;
+                flex: 1;
+                overflow: hidden;
+            }
+
+            .content-panel {
+                flex: 1.2;
+                padding: 30px;
+                overflow-y: auto;
+                border-right: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .interaction-panel {
+                flex: 0.8;
+                padding: 30px;
+                background: rgba(0, 0, 0, 0.2);
+                overflow-y: auto;
+            }
+
+            /* Card */
+            .task-card {
+                background: rgba(255, 255, 255, 0.02);
+                backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                padding: 25px;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: #d09c6a;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            summary, h2, h3 { color: #d09c6a; margin-bottom: 15px; }
+
+            /* Hide default arrow in Browser */
+            details summary::-webkit-details-marker,
+            details summary::marker {
+                display: none;
+                content: "";
+            }
+
+            .task-header h2 {
+                display: inline-block;
+            }
+
+            code { background: rgba(0, 0, 0, 0.4); padding: 2px 6px; border-radius: 4px; color: #f2a359; }
+            p { line-height: 1.6; margin-bottom: 15px; color: #c4b9b0; }
+
+        </style>
+    </head>
+    <body>
+        <!-- Top Progress header -->
+         <header class="lab-header">
+            <div class="logo"><i class="fas fa-coffee"></i>All In One</div>
+            <div class="room-title">Academic Café</div>
+            <div class="progress-container">One Click Installer</div>
+         </header>
+
+         <div class="lab-container">
+            <!-- Main Page: Download Contents & Resources -->
+             <main class="content-panel">
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">VS Code Editor v1.131</i></h2>
+                    </summary>
+                        <div class="task-body">
+                            <h2><i class="fas fa-tasks">About</i></h2>
+                            <p>Released by Microsoft on July 29, 2026, Visual Studio Code v1.131 introduces built-in experimental dictation across the workbench, enhanced visibility for AI subagent progress in the Agents window, an experimental hybrid Markdown editor for agent workflows, and cursor-preservation improvements in terminal accessibility view.</p>
+                            <h2><i class="fas fa-tasks">Key Updates and New Features</i></h2>
+                            <p>Built-In Dictation (Experimental): Dictate text directly into chat inputs, text editors, and the integrated terminal using a single shared speech session without needing a separate extension.</p>
+                            <p>Subagent Visibility: Track active subagent metrics—including the specific model used, elapsed time, and active tool calls—directly inside the Agents window.</p>
+                            <p>Hybrid Markdown Editor: Test an experimental in-place Markdown editing mode designed to streamline workflows with agent-actionable comments.</p>
+                            <p>Terminal & Python Updates: Retain your exact cursor position in the Terminal Accessible View during new output arrivals, alongside the completion of the Python Environments rollout.</p>
+                            <a href="https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                        </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Python v3.14.6</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Python 3.14.6 is a stable maintenance release of Python, officially launched on June 10, 2026. As a minor patch release, it serves to refine the Python 3.14 lifecycle by delivering approximately 179 bugfixes, build improvements, and documentation enhancements since version 3.14.5.</p>
+                        <h2><i class="fas fa-tasks">Core Technical Changes in Python 3.14</i></h2>
+                        <p>Because Python 3.14.6 is a patch variant, it inherits all major features introduces in the base 3.14 release:</p>
+                        <p>Template String Literals (T-Strings): Introduced to improve string manipulation and parsing workflows.</p>
+                        <p>Deferred Annotation Evaluation: Changes how type hints are processed natively.</p>
+                        <p>Multiple Interpreters (PEP 734): Supports spawning subinterpreters inside the standard library to improve parallel programming capabilities.</p>
+                        <p>New Compression Module (compression.zstd): Native standard library support for the fast Zstandard compression algorithm.</p>
+                        <p>UUID Enhancements: Native generation and parsing support for UUID versions 6, 7, and 8.</p>
+                        <p>Syntax Highlighting: Built-in visual text colorization inside the terminal REPL (PyREPL) environment.</p>
+                        <p>Control Flow Restrictions: Programmers can no longer use return, break, or continue statements that force an exit directly out of a finally code block.</p>
+                        <h2><i class="fas fa-tasks">Build and Ecosystem Updates</i></h2>
+                        <p>Removal of PGP Signatures: Per PEP 761, Python release artifacts no longer include PGP keys. The core team recommends validating binaries using Sigstore instead.</p>
+                        <p>Official Android Binaries: Stable embeddable software packages for Android (aarch64 and x86_64 architectures) are now distributed directly.</p>
+                        <p>Experimental JIT: Precompiled macOS and Windows installers ship with an experimental Just-In-Time compiler.</p>
+                        <p>Cloud Platform Adoption: Major cloud application hosts like Heroku have deployed native 3.14.6 environments for web projects.</p>
+                        <a href="https://www.python.org/ftp/python/pymanager/python-manager-26.3.msix" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Android Studio Quail 3</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Android Studio Quail 3 is the stable channel release of Google's official IDE, officially rolling out as an AI-agentic powerhouse for mobile developers. Building heavily on the "agentic workflows" theme introduced earlier in the Quail cycle, Quail 3 shifts the AI from a simple code-completion assistant into an autonomous development collaborator capable of advanced multi-stage reasoning.</p>
+                        <h2><i class="fas fa-tasks">Key AI & Agent Updates</i></h2>
+                        <p>Planning Mode Improvements: Enhanced AI workflow mechanics for complex development tasks.</p>
+                        <p>MCP Marketplace: Integration of the Model Context Protocol marketplace to support broader AI ecosystem tools.</p>
+                        <p>Deep Firebase Integration: AI agents can now interact directly with and manage your Firebase backend projects inside the IDE.</p>
+                        <p>Enhanced Android CLI: Built-in terminal tools feature new commands like find usages and find declarations optimized for AI agent navigation.</p>
+                        <h2><i class="fas fa-tasks">Coding & Debugging Features</i></h2>
+                        <p>Merge Conflicts Action: Optimized interface actions to handle complex git code merges seamlessly.</p>
+                        <p>Compose Preview Rendering: The Android CLI can now render Jetpack Compose previews into actual images.</p>
+                        <p>Visual Screen State Verification: Allows automated tools or developers to compare real Compose preview images against Figma mockups to fix layout issues instantly.</p>
+                        <a href="https://edgedl.me.gvt1.com/android/studio/install/2026.1.3.7/android-studio-quail3-windows.exe" target="_blank">[DOWNLOAD FOR WINDOWS] (Need VPN To Download)</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Android Studio Quail 4</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Android Studio Quail 4 (version 2026.1.4) is an active release branch of Google's official integrated development environment (IDE) for Android, currently available under the Canary/Preview channel. It iterates directly upon the capabilities introduced in previous Quail versions (such as multi-tasking AI agent tabs) by expanding full-stack features, AI workspace enhancements, and advanced layout tools.</p>
+                        <h2><i class="fas fa-tasks">Key Preview Features & Changes</i></h2>
+                        <p>Android Studio Preview release notes highlight several advanced features currently active or testing within the Quail 4 development cycle:</p>
+                        <p>Full-Stack Apps with Firebase in Agent Mode: Developers can use the built-in AI agent to create, configure, and orchestrate serverless backends and cloud services from a single prompt within the IDE.</p>
+                        <p>Google AI Studio Integration: Provides a dedicated build mode alongside an embedded Android Emulator. This enables prototyping, editing, and executing Android application logic directly inside the Google AI Studio ecosystem.</p>
+                        <p>Android CLI: Bridging local developer terminal environments with automated agents to let them interact directly with Android Studio tools and systemic codebase knowledge.</p>
+                        <p>Compose Preview Screenshot Testing Tool: Automated screenshot diffing and regression testing capabilities specifically tailored for Jetpack Compose UI elements.</p>
+                        <p>Advanced Layout Inspector: Now tracks recomposition state reads directly within the inspector timeline, allowing developers to precisely isolate unnecessary UI rendering overhead in Jetpack Compose apps.</p>
+                        <a href="https://edgedl.me.gvt1.com/android/studio/install/2026.1.4.3/android-studio-quail4-canary3-windows.exe" target="_blank">[DOWNLOAD FOR WINDOWS] (Need VPN To Download)</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Android SDK Platform Tools</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Android SDK Platform-Tools is a core component of the Android SDK that contains essential command-line tools for debugging, flashing, and interacting with Android devices. These tools bridge the gap between a computer and an Android system, allowing developers and advanced users to control a device directly via terminal commands</p>
+                        <h2><i class="fas fa-tasks">Core Features</i></h2>
+                        <p>adb (Android Debug Bridge): Acts as a communications bridge to run terminal commands, transfer files, install APKs, and check device logs.</p>
+                        <p>fastboot: Used to flash system images, unlock bootloaders, and modify the device's firmware when the device is in bootloader mode.</p>
+                        <p>sqlite3: A command-line interface packed into the toolset to inspect SQLite databases used by Android apps.</p>
+                        <h2><i class="fas fa-tasks">Common Uses</i></h2>
+                        <p>App Development: Testing applications directly on hardware or reading system crash reports via adb logcat.</p>
+                        <p>Sideloading & Updates: Manually installing application files (.apk) or official system zip packages via adb sideload.</p>
+                        <p>Device Customization: Rooting, installing custom recovery tools, or changing system-level settings without rooting.</p>
+                        <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank">[DOWNLOAD FOR WINDOWS] (Need VPN To Download)</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Node.js</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Node.js is a free, open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It allows developers to build scalable server-side applications, command-line tools, and network APIs using JavaScript, unifying full-stack web development under a single language.</p>
+                        <h2><i class="fas fa-tasks">Core Architecture</i></h2>
+                        <p>Node.js relies on two foundational components to handle operations cleanly and fast:</p>
+                        <p>Google V8 Engine: Compiles JavaScript code directly into native machine code for maximum execution speed.</p>
+                        <p>libuv Library: A C/C++ library that provides an event loop and asynchronous, non-blocking input/output (I/O) primitives.</p>
+                        <h2><i class="fas fa-tasks">Key Characteristics</i></h2>
+                        <p>Single-Threaded: Runs entire applications inside a single process without spawning a new thread for each client request.</p>
+                        <p>Non-Blocking I/O: Passes database queries, network requests, and file-system read tasks to the system kernel.</p>
+                        <p>Event-Driven: Uses an event loop to resume code execution immediately after a background system task finishes.</p>
+                        <p>Zero Deadlocks: Operates completely without thread-locking, which eliminates major concurrency concurrency bugs.</p>
+                        <h2><i class="fas fa-tasks">Primary Use Cases</i></h2>
+                        <p>Because of its event-driven design, Node.js excels at managing many simultaneous connection with very low overhead.</p>
+                        <p>REST APIs & Microservices: Building data backends with light frameworks like Express.</p>
+                        <p>Real-Time Applications: Running chat applications, online gaming servers, and live collaboration dashboards.</p>
+                        <p>Data Streaming: Processing high-volume multimedia data incoming streams effectively.</p>
+                        <p>Command Line Interface (CLI): Creating automated local developer tooling and custom server scripts.</p>
+                        <h2><i class="fas fa-tasks">Node.js Ecosystem</i></h2>
+                        <p>npm (Node Package Manager). It provides developers instant access to the largest public software registry in the world, allowing them to easily download and share community-built utility libraries.</p>
+                        <a href="https://nodejs.org/dist/v24.18.1/node-v24.18.1-x64.msi" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Git v2.55.0.3</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Git is a free, open-source distributed version control system designed to track changes in source code during software development. Created by Linus Torvalds in 2005, it allows multiple developers to work on the same project simultaneously without overwriting each other's changes, handling projects of all sizes with incredible speed and efficiency.</p>
+                        <h2><i class="fas fa-tasks">Core Architecture and States</i></h2>
+                        <p>Unlike traditional systems that track file-based changes, Git stores data as a series of snapshots of a miniature filesystem. Your files always exist in one of three main states:</p>
+                        <p>Modified: You changed a file but have not saved it to your database yet.</p>
+                        <p>Staged: You marked a modified file in its current version to go into your next commit snapshot.</p>
+                        <p>Committed: Your data is safely stored in your local Git database.</p>
+                        <h2><i class="fas fa-tasks">Key Concepts</i></h2>
+                        <p>Repository (Repo): The directory or storage space where Git tracks your project files and their complete history.</p>
+                        <p>Branching: A way to diverge from the main line of development to work on new features or bug fixes independently without affecting the stable code.</p>
+                        <p>Merging: The process of taking independent lines of development (branches) and combining them back into a single branch.</p>
+                        <a href="https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.3/Git-2.55.0.3-64-bit.exe" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Postman API Platform</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs—faster.</p>
+                        <p>The Postman API Platform delivers high productivity for developers, great quality for APIs, and airtight governance for organizations across the world.</p>
+                        <h2><i class="fas fa-tasks">Core Features</i></h2>
+                        <p>Request Sender: Test APIs using methods like GET, POST, PUT, PATCH, and DELETE across HTTP, GraphQL, gRPC, and WebSockets.</p>
+                        <p>Collections: Group related API requests into folders for organized testing and sharing.</p>
+                        <p>Environments & Variables: Store dynamic data (like tokens or base URLs) to reuse seamlessly across different test stages.</p>
+                        <p>Automation & Testing: Write JavaScript code to validate server responses and run automated test suites.</p>
+                        <a href="https://dl.pstmn.io/download/latest/win64" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Eruda Browser Console</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Eruda is a lightweight, open-source mobile browser developer console. It acts like Chrome DevTools for your phone, letting developers inspect DOM elements, view JavaScript logs, monitor network requests, and check local storage directly on mobile devices without needing a desktop.</p>
+                        <h2><i class="fas fa-tasks">Core Features</i></h2>
+                        <p>Console: Catch JavaScript errors, warnings, and logs, or run custom JS code snippets.</p>
+                        <p>Elements: Inspect and modify HTML layout and CSS styles on the fly.</p>
+                        <p>Network: Track HTTP requests, response statuses, and payloads.</p>
+                        <p>Resources: View cookies, local storage, session storage, and cached assets.</p>
+                        <p>Info: Check device specifications, current URLs, and user agent strings.</p>
+                        <a href="https://res.ldrescdn.com/download/LDPlayer9.exe?n=LDPlayer9_ens_com.erudapro_3040_ld.exe" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">PostgreSQL</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>PostgreSQL, often called Postgres, is a free and open-source object-relational database system. It uses and extends the SQL language to safely store and scale complex data data workloads. It is known for its high reliability, data integrity, and support for both relational and non-relational JSON queries.</p>
+                        <h2><i class="fas fa-tasks">Key Features</i></h2>
+                        <p>ACID Compliant: Ensures safe, reliable transactions so your data stays accurate even if errors happen.</p>
+                        <p>Concurrency (MVCC): Allows many people to read and write data at the same time without slowing down the system.</p>
+                        <p>Extensible: Lets you create custom data types, write custom functions, and use powerful add-ons like PostGIS for maps.</p>
+                        <p>Language Support: Works with popular coding languages like Python, Java, C++, and Node.js.</p>
+                        <h2><i class="fas fa-tasks">Common Uses</i></h2>
+                        <p>Web and mobile app backends</p>
+                        <p>Financial and transactional systemsData warehousing and analytics</p>
+                        <p>Geographic and spatial data mapping</p>
+                        <a href="https://sbp.enterprisedb.com/getfile.jsp?fileid=1260306" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">MongoDB v8.3.7</i></h2>
+                    </summary>
+                    <h2><i class="fas fa-tasks">About</i></h2>
+                    <p>a popular, open-source NoSQL document database that stores data in flexible, JSON-like formats called BSON instead of traditional tables and rows. It is designed for horizontal scalability, high performance, and easy data evolution in modern web and mobile applications.</p>
+                    <h2><i class="fas fa-tasks">Key Features</i></h2>
+                    <p>Document Model: Stores related data together inside single documents using field-value pairs.</p>
+                    <p>Flexible Schema: Fields can vary between documents, allowing you to change data structures without downtime.</p>
+                    <p>Scalability: Uses horizontal scaling (sharding) to spread loads across multiple servers.</p>
+                    <p>High Availability: Uses replica sets for automatic failover and data redundancy.</p>
+                    <h2><i class="fas fa-tasks">Common Uses</i></h2>
+                    <p>Real-time analytics and high-speed logging.</p>
+                    <p>Content management systems and user profiles.</p>
+                    <p>Mobile and web app backends handling unstructured data.</p>
+                    <div class="task-body">
+                        <a href="https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.3.7-signed.msi" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Anthropic Claude Code v2.1.220</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <h2><i class="fas fa-tasks">About</i></h2>
+                        <p>Claude Code version 2.1.220 is a maintenance release for Anthropic's terminal-based coding assistant. Released on July 25, 2026, it immediately followed the major v2.1.219 update to provide quiet bug fixes and general reliability improvements without introducing flashy new features.</p>
+                        <h2><i class="fas fa-tasks">Context and Release Focus</i></h2>
+                        <p>Follow-up Stability: Shipped right after version 2.1.219—which rolled out Opus 5 as the default model, added strict network allowlists, and expanded nested subagent capabilities.</p>
+                        <p>No New Features: The official changelog notes only bug fixes and cleanup to address edge cases from the preceding major feature drop.</p>
+                        <p>Ecosystem: Continues support for terminal-driven agentic workflows, managing multi-file edits, git integration, and model pickers.</p>
+                        <h2><i class="fas fa-tasks">Context from Previous Update</i></h2>
+                        <p>Shipped just under 19 hours after version 2.1.219.</p>
+                        <p>Addressed edge cases and teething issues from the massive transition where Opus 5 became the default model.</p>
+                        <p>Cleaned up fast-mode logic and adjustments made to subagent depth configurations.</p>
+                        <h2><i class="fas fa-tasks">Key Focus Areas</i></h2>
+                        <p>General software bug fixes.</p>
+                        <p>Reliability improvements and terminal crash reduction.</p>
+                        <p>Enhanced response consistency for background agent actions.</p>
+                        <a href="https://downloads.claude.ai/claude-code-releases/2.1.220/win32-x64/claude.exe" target="_blank">[DOWNLOAD FOR WINDOWS]</a>
+                    </div>
+                </details>
+
+                <details class="task-card">
+                    <summary class="task-header font-bold cursor-pointer select-none">
+                        <h2><i class="fas fa-tasks">Want More Resources For Cybersecurity Engineers?</i></h2>
+                    </summary>
+                    <div class="task-body">
+                        <a href="https://kali.org/" target="_blank">[GET MORE RESOURCES]</a>
+                    </div>
+                </details>
+
+             </main>
+         </div>
+    </body>
+</html>
+
+<!--QnJhbmQ6IEFjYWRlbWljIENhZsOpIHwgT3duZXI6IFN3YW4gWWVlIEh0ZXQoSUQ6IDMwMDYxMSkgfCBEYXRl
+OiAyMDI2LTgtMjEK-->
